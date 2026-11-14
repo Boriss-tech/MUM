@@ -1,0 +1,33 @@
+.footer {
+  background: var(--color-marino);
+  color: #fff;
+  padding: 32px 0;
+  margin-top: auto;
+}
+
+.footer__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.footer__contenido img {
+  width: 140px;
+  height: auto;
+}
+
+.footer p {
+  margin: 0;
+  color: #dbe6f5;
+}
+
+.footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer a {
+  color: var(--color-celeste);
+}
