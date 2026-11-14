@@ -1,0 +1,46 @@
+/* Estilos compartidos por las fichas de especie y de lugar */
+.ficha {
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 900px) {
+  .ficha {
+    grid-template-columns: 5fr 7fr;
+    align-items: start;
+  }
+}
+.ficha__cientifico {
+  font-style: italic;
+  color: var(--color-texto-suave);
+  margin-top: -8px;
+}
+.ficha__categoria {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-rosado);
+}
+.ficha dl {
+  margin: 0;
+}
+.ficha dt {
+  font-weight: 700;
+  color: var(--color-marino);
+  margin-top: 16px;
+}
+.ficha dd {
+  margin: 4px 0 0;
+}
+.ficha__fuente {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+.ficha__miniaturas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}

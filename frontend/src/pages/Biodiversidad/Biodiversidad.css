@@ -1,0 +1,19 @@
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.filtros button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--color-marino);
+  background: #fff;
+  color: var(--color-marino);
+  font-weight: 600;
+  cursor: pointer;
+}
+.filtros button[aria-pressed='true'] {
+  background: var(--color-marino);
+  color: #fff;
+}
