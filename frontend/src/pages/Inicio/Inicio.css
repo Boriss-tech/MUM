@@ -1,0 +1,43 @@
+.portada {
+  background: linear-gradient(135deg, var(--color-marino) 0%, #1b4a8a 100%);
+  color: #fff;
+  padding: 56px 0;
+}
+.portada h1 {
+  color: #fff;
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+.portada__bajada {
+  margin: 0;
+  max-width: 640px;
+  font-size: 1.1rem;
+  color: #dbe6f5;
+}
+
+.accesos {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.acceso {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 18px;
+  border-radius: var(--radio);
+  border: 1px solid var(--color-borde);
+  border-top: 4px solid var(--color-turquesa);
+  text-decoration: none;
+  color: var(--color-texto);
+}
+.acceso strong {
+  color: var(--color-marino);
+  font-size: 1.1rem;
+}
+.acceso:hover {
+  border-top-color: var(--color-rosado);
+}
