@@ -1,0 +1,32 @@
+# Hosting Apache/cPanel: la SPA de React maneja sus propias rutas.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Forzar HTTPS (RNF07)
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Archivos y carpetas reales (assets, media) se sirven tal cual
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # /api la atiende el backend; no reescribir
+  RewriteRule ^api/ - [L]
+
+  # Cualquier otra ruta (/lugares/poza-del-8, /biodiversidad...) -> index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Caché: assets con hash por 1 año, index.html siempre fresco (RNF04)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|svg|png|jpe?g|webp|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "index\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+Options -Indexes
